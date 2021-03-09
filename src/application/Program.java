@@ -41,9 +41,13 @@ public class Program {
 		 {
 			 System.out.println("Invalid date format!");
 		 }
-		 catch(DomainException e) 
+		 catch(DomainException e) // tratando e capturando o "Exception personalizado" que é lançado a partir dos métodos da class "Reservation"
 		 {
 			 System.out.println("Error in reservation: "+e.getMessage());
+		 }
+		 catch(RuntimeException e) // Tratando a exceção usando um exception genérico "RuntimeException". Ele captura toda exceção não previstas usando o -UpCasting-
+		 {
+			 System.out.println("Unexpected error !");
 		 }
 		 sc.close();
 	}
